@@ -13,9 +13,10 @@ body {
   position:relative;
   top:55px;
   z-index:1;
+
 }
 
-h1 {
+h1#dashboardheading {
   font-weight: 700;
   position: center;
   margin: -100px;
@@ -34,6 +35,7 @@ div#mainDiv {
   flex-flow: row wrap;
   text-align: center;
   margin-bottom: 26px;
+
 }
 
 .taskDiv {
@@ -57,26 +59,29 @@ div#titleDiv {
 
 div#colOne {
   background-color: #999999;
-  .toDoButton {
-    display: none;
-  }
   flex: 1 1 30%;
+}
+
+div#colOne .toDoButton {
+    display: none;
 }
 
 div#colTwo {
   background-color: #bfbfbf;
-  .doingButton {
-    display: none;
-  }
   flex: 1 1 30%;
 }
 
-div#colThree {
-  background-color: #e5e5e5;
-  .doneButton {
+div#colTwo .doingButton {
     display: none;
   }
+
+div#colThree {
+  background-color: #e5e5e5;
   flex: 1 1 30%;
+}
+
+div#colThree .doneButton {
+    display: none;
 }
 
 .colHeader {
@@ -249,40 +254,45 @@ div#colThree {
 }
 
 #newTaskFooter {
-//   display: flex;
+
   font-size: 20px;
-  //justify-content: center;
+  
   width: 90%;
-  //align-items: center;
+
   flex-direction: column;
   margin-left: 55px;
   left: 18px;
   right: 34px;
   bottom: -8px;
-  div {
+
+}
+
+
+#newTaskFooter  div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #333333;
     width: 100%;
-    #newTaskButton{
+}
+
+ #newTaskFooter  div #newTaskButton{
       margin-right: 11px;
       width: 30%;
-      background-color: black
-    }
-    input {
+      background-color: black;
+}
+
+#newTaskFooter  div  input {
       margin-bottom: 15px;
       width: 50%;
       text-align: center;
       border-radius: 15px;
       font-size: 25px;
-    }
-    select {
+}
+
+#newTaskFooter  div select {
       margin: 0 15px 15px 15px;
-   
-    }
-  }
 }
 
 #newTaskHeader {
@@ -290,3 +300,108 @@ div#colThree {
   margin: 0px;
 }
 
+.signinbox{
+  margin-top: 190px;
+ 
+}
+
+div.imagePart{
+
+  background-image: url('https://d2myx53yhj7u4b.cloudfront.net/sites/default/files/simple-kanban.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  
+}
+
+.form-signup{
+  margin-left: 14px;
+}
+
+.heading-main{
+  margin-top: 20px;
+  margin-left:-85%;
+}
+
+.form-signin{
+  margin-left: 72%;
+}
+
+.form-signin-heading{
+  font-size: 30px;
+}
+
+label{
+   color: #3f3f3f;
+}
+
+input.form-control-signin , button.button_signin{
+  border-radius: 15px;
+  color: #3f3f3f;
+  text-align: center;
+  width : 70%;
+  outline:none;
+} 
+
+.button_signin{
+ width: 40%;
+}
+
+.form-signup-heading{
+  font-size: 50px;
+  color: white;
+}
+
+.signup_box{
+
+    margin-left: 185px;
+    height: initial;
+    width: 70%;
+    background-color: #13232f;
+}
+
+.sr-only-signup{
+  color:rgba(white,.5);
+  font-size: 20px;
+}
+
+.form-control-signup{
+    text-align: center;
+   width : 30%;
+   outline:none;
+  border-radius: 15px;
+}
+
+.signup_div{
+  padding: 8px;
+}
+.signup_div_pass{
+  margin-left: -19px;
+  padding: 8px;
+}
+
+.button_signup{
+ 
+  width:20%;
+  outline:none;
+  border-radius:15px;
+  margin-top: 15px;
+  margin-left: 50px;
+  font-size:20px;
+
+  background:#1ab188;
+  color: white;
+
+}
+
+#inputPassword_signup{
+  width:29.5%;
+}
+
+.link_signin{
+  margin-left:51px;
+  -webkit-text-stroke-color: #3f3f3f
+
+}
+a{
+  color: #3f3f3f
+}

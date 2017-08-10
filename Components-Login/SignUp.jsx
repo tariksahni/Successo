@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 import SignIn from './SignIn.jsx';
 import axios from 'axios';
-
+import style from ".././css/styles.css";
 
 class SignUp extends Component{
 
@@ -49,21 +49,27 @@ class SignUp extends Component{
 
     render() {
       return (
-        <div>
-          <form className="form-signin">
-            <h2 className="form-signin-heading">Please sign up</h2>
-            <label for="inputName" className="sr-only">Name</label>
-            <input type="name" onChange={this.handleNameChange} id="inputName" className="form-control" placeholder="Name" required />
-            <label for="inputEmail" className="sr-only">Email address</label>
-            <input type="email" onChange={this.handleEmailChange} id="inputEmail" className="form-control" placeholder="Email address" required />
-            <label for="inputPassword" className="sr-only">Password</label>
-            <input type="password" onChange={this.handlePasswordChange} id="inputPassword" className="form-control" placeholder="Password" required />
-            
-            <button className="btn btn-lg btn-primary btn-block" onClick={this.signUp} type="button">Sign up</button>
-          </form>
-          <div>
-            <Link to="/">{'SignIn'}</Link>
+        <div className = "signup_box">
+          <form className="form-signup">
+            <h2 className="form-signup-heading">Please sign up</h2>
+            <div className ="signup_div">
+            <label for="inputName" className="sr-only-signup">  Name   </label>&nbsp;&nbsp;
+            <input type="name" onChange={this.handleNameChange} id="inputName" className="form-control-signup"  required />
+            </div>
+            <div className ="signup_div">
+            <label for="inputEmail" className="sr-only-signup">  Email   </label>&nbsp;&nbsp;
+            <input type="email" onChange={this.handleEmailChange} id="inputEmail" className="form-control-signup"  required />
+            </div>
+            <div className ="signup_div_pass">
+            <label for="inputPassword" className="sr-only-signup">Password</label>&nbsp;&nbsp;
+            <input type="password" onChange={this.handlePasswordChange} id="inputPassword_signup" className="form-control-signup" required />
+            </div>
+            <button className="btn btn-lg btn-primary btn-block button_signup" onClick={this.signUp} type="button">Sign up</button>
+             <div className="link_signin">
+            <Link to="/">{'Already have a account'}</Link>
           </div>
+          </form>
+         
         </div>
         
       )

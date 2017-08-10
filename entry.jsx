@@ -22,13 +22,11 @@ const store = createStore(reducer);
 ReactDOM.render(
   <Provider store={store} >
     <BrowserRouter >
-      <div>
         <Switch>
           <Route component={SignIn} exact path="/"></Route>
           <Route component={SignUp} path="/signup"></Route>
           <Route component={Successo} path="/dashboard"></Route>
         </Switch>
-      </div>  
     </BrowserRouter>
   </Provider>  ,
 document.getElementById('root'));

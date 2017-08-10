@@ -50,7 +50,6 @@ class Successo extends React.Component {
   }
 
   updateHandler() {
-
     this.loadDataFromMongo();
   }
 
@@ -61,7 +60,7 @@ class Successo extends React.Component {
   render() {
     return (
       <div id="mainDiv">
-        <div id="titleDiv"><h1>Successo</h1></div>
+        <div id="titleDiv"><h1 id="dashboardheading">Successo</h1></div>
         <ToDoBox data={this.props.toDo}  handler={this.updateHandler}/>
         <DoingBox data={this.props.doing}  handler={this.updateHandler}/>
         <DoneBox data={this.props.done} handler={this.updateHandler}/>
@@ -74,7 +73,7 @@ class Successo extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   var stateData = state.successo_reducer.toJS();
-  console.log("map state to props",state,stateData );
+
   return {
     toDo: stateData.toDo,
     doing: stateData.doing,
@@ -83,7 +82,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  console.log("dispatch mei bhi aa gya ",dispatch);
+ 
   return {
     setItems: (data) => {
       console.log("dispatch walla chala",data);
