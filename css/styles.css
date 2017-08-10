@@ -1,0 +1,292 @@
+
+*{
+  font-family: 'Reem Kufi', sans-serif;
+  text-align:center;
+  letter-spacing: 1px;
+}
+
+body {
+  background-color: grey;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+  position:relative;
+  top:55px;
+  z-index:1;
+}
+
+h1 {
+  font-weight: 700;
+  position: center;
+  margin: -100px;
+  color: white;
+  left: 18px;
+  top: -50px;
+}
+
+div {
+  padding: 8px;
+}
+
+div#mainDiv {
+  background-color: grey;
+  display:flex;
+  flex-flow: row wrap;
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.taskDiv {
+  background-color: grey;
+  width: 100%;
+  margin: 0px;
+}
+
+input {
+  text-align: left;
+  margin: 0px 5px 0px 0px;
+}
+
+div#titleDiv {
+  background-color: black;
+  font-size: 32px;
+  height: 0px;
+  width:100%;
+  z-index:2;
+}
+
+div#colOne {
+  background-color: #999999;
+  .toDoButton {
+    display: none;
+  }
+  flex: 1 1 30%;
+}
+
+div#colTwo {
+  background-color: #bfbfbf;
+  .doingButton {
+    display: none;
+  }
+  flex: 1 1 30%;
+}
+
+div#colThree {
+  background-color: #e5e5e5;
+  .doneButton {
+    display: none;
+  }
+  flex: 1 1 30%;
+}
+
+.colHeader {
+  font-size: 2em;
+  font-weight: 700;
+  color: black;
+}
+
+.taskItem {
+  background-color: white;
+  padding: 0px;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+}
+
+
+
+.taskItemName {
+  background-color: white;
+  color: black;
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-right: 10px;;
+  padding: 0px 0px 0px 10px;
+  text-align: left;
+}
+
+.taskItemNameText {
+  text-align: left;
+  width: 70%;
+}
+
+.taskItemBody {
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.fieldLabels {
+  margin: 0px;
+}
+
+.createdByLabel {
+  font-size:15px;
+  margin: 0px;
+}
+
+.createdByName {
+  font-size: 20px;
+  margin: 0px;
+}
+
+.deleteButton {
+  background: #cc0000;
+  background-image: -webkit-linear-gradient(top, #cc0000, #800000);
+  background-image: -moz-linear-gradient(top, #cc0000, #800000);
+  background-image: -ms-linear-gradient(top, #cc0000, #800000);
+  background-image: -o-linear-gradient(top, #cc0000, #800000);
+  background-image: linear-gradient(to bottom, #cc0000, #800000);
+  font-size: 0.75em;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px;
+  font-weight: 700;
+  border: 0px;
+  border-radius: 15%;
+  margin: 3px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 25px;
+}
+
+.deleteButton:hover {
+  background: #ff0000;
+  background-image: -webkit-linear-gradient(top, #ff0000, #990000);
+  background-image: -moz-linear-gradient(top, #ff0000, #990000);
+  background-image: -ms-linear-gradient(top, #ff0000, #990000);
+  background-image: -o-linear-gradient(top, #ff0000, #990000);
+  background-image: linear-gradient(to bottom, #ff0000, #990000);
+  padding: 5px;
+  font-weight: 700;
+  border: 0px;
+  border-radius: 15%;
+  margin: 3px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+
+
+
+#saveButton {
+  background: #036564;
+  background-image: -webkit-linear-gradient(top, #036564, #033649);
+  background-image: -moz-linear-gradient(top, #036564, #033649);
+  background-image: -ms-linear-gradient(top, #036564, #033649);
+  background-image: -o-linear-gradient(top, #036564, #033649);
+  background-image: linear-gradient(to bottom, #036564, #033649);
+  font-size: 0.75em;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px;
+  font-weight: 700;
+  border: 0px;
+  border-radius: 5%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  top: 0px;
+  right: 20px;
+  width: 90%;
+}
+
+#saveButton:hover {
+  background: lighten(#036564, 10%);
+  background-image: -webkit-linear-gradient(top, lighten(#036564, 10%), lighten(#033649, 10%));
+  background-image: -moz-linear-gradient(top, lighten(#036564, 10%), lighten(#033649, 10%));
+  background-image: -ms-linear-gradient(top, lighten(#036564, 10%), lighten(#033649, 10%));
+  background-image: -o-linear-gradient(top, lighten(#036564, 10%), lighten(#033649, 10%));
+  background-image: linear-gradient(top, lighten(#036564, 10%), lighten(#033649, 10%));
+  top: 0px;
+  right: 20px;
+}
+
+.assignButtonContainer {
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 0px;
+}
+
+.assignButton {
+  background: #036564;
+  background-image: -webkit-linear-gradient(top, #036564, #033649);
+  background-image: -moz-linear-gradient(top, #036564, #033649);
+  background-image: -ms-linear-gradient(top, #036564, #033649);
+  background-image: -o-linear-gradient(top, #036564, #033649);
+  background-image: linear-gradient(to bottom, #036564, #033649);
+  font-size: 0.75em;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px;
+  font-weight: 700;
+  border: 0px;
+  border-radius: 5%;
+  margin: 5px;
+}
+
+.assignButton:hover {
+  background: lighten(#036564, 10%);
+  background-image: -webkit-linear-gradient(top, lighten(#036564, 10%), lighten(#033649, 10%));
+  background-image: -moz-linear-gradient(top, lighten(#036564, 10%), lighten(#033649, 10%));
+  background-image: -ms-linear-gradient(top, lighten(#036564, 10%), lighten(#033649, 10%));
+  background-image: -o-linear-gradient(top, lighten(#036564, 10%), lighten(#033649, 10%));
+  background-image: linear-gradient(top, lighten(#036564, 10%), lighten(#033649, 10%));
+  padding: 5px;
+  font-weight: 700;
+  border: 0px;
+  border-radius: 5%;
+}
+
+#newTaskFooter {
+//   display: flex;
+  font-size: 20px;
+  //justify-content: center;
+  width: 90%;
+  //align-items: center;
+  flex-direction: column;
+  margin-left: 55px;
+  left: 18px;
+  right: 34px;
+  bottom: -8px;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333;
+    width: 100%;
+    #newTaskButton{
+      margin-right: 11px;
+      width: 30%;
+      background-color: black
+    }
+    input {
+      margin-bottom: 15px;
+      width: 50%;
+      text-align: center;
+      border-radius: 15px;
+      font-size: 25px;
+    }
+    select {
+      margin: 0 15px 15px 15px;
+   
+    }
+  }
+}
+
+#newTaskHeader {
+  color: white;
+  margin: 0px;
+}
+
