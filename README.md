@@ -9,7 +9,7 @@ A Kanban board using:
 - **Mongoose** as your ORM for the **Mongo** Datastore.
 
 ## To Run 
-// Go to the directory 
-cd Successo
-npm start
+-// Go to the directory 
+-cd Successo
+-npm start
 
