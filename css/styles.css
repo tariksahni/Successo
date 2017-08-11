@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: grey;
+  background-color: #19192F;
   text-align: center;
   align-items: center;
   padding: 10px;
@@ -301,13 +301,14 @@ div#colThree .doneButton {
 }
 
 .signinbox{
-  margin-top: 190px;
+      margin-top: 125px;
+    margin-left: -670px
  
 }
 
 div.imagePart{
-
-  background-image: url('https://d2myx53yhj7u4b.cloudfront.net/sites/default/files/simple-kanban.jpg');
+  margin-top: -20px;
+  background-image: url('https://www.mysmartmove.com/sites/SmartMove/img/slider/secure.jpg');
   background-repeat:no-repeat;
   background-size:cover;
   
@@ -318,12 +319,13 @@ div.imagePart{
 }
 
 .heading-main{
-  margin-top: 20px;
-  margin-left:-85%;
+  font-size: 50px;
+  color: white;
 }
 
 .form-signin{
-  margin-left: 72%;
+  /*align-items: center;*/
+  color: white;
 }
 
 .form-signin-heading{
@@ -331,19 +333,23 @@ div.imagePart{
 }
 
 label{
-   color: #3f3f3f;
+   color: white
 }
 
-input.form-control-signin , button.button_signin{
+input.form-control-signin {
   border-radius: 15px;
-  color: #3f3f3f;
+  color : black;
   text-align: center;
-  width : 70%;
+  width : 20%;
   outline:none;
 } 
 
-.button_signin{
- width: 40%;
+button.button_signin{
+  border-radius: 15px;
+  color : black;
+  text-align: center;
+  outline:none;
+   width: 9%;
 }
 
 .form-signup-heading{
@@ -403,5 +409,5 @@ input.form-control-signin , button.button_signin{
 
 }
 a{
-  color: #3f3f3f
+  color: white
 }

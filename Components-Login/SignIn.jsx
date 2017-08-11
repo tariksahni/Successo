@@ -51,9 +51,8 @@ class SignIn  extends Component {
       return (
         <div className = "imagePart">
           {isLoggedIn ? < Redirect to={{pathname: '/dashboard'}}/>: (
-            <div className = "signinbox"> 
-              <h1 className = "heading-main">SUCCESSO</h1>
-              {/*<h2 className = "heading-main">SUCCESSO</h2>*/}
+            <div className = "signinbox">    
+            <h2 className = "heading-main">SUCCESSO</h2>
               <form className="form-signin">
                 <h2 className="form-signin-heading">Please sign in</h2>
                 <label for="inputEmail" className="userlogin">Email address</label><br></br>

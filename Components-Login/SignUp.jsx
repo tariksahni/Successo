@@ -66,7 +66,7 @@ class SignUp extends Component{
             </div>
             <button className="btn btn-lg btn-primary btn-block button_signup" onClick={this.signUp} type="button">Sign up</button>
              <div className="link_signin">
-            <Link to="/">{'Already have a account'}</Link>
+            <Link  className= "linkcolour" to="/">{'Already have a account'}</Link>
           </div>
           </form>
          
