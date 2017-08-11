@@ -13,3 +13,6 @@ A Kanban board using:
 - cd Successo
 - npm start
 
+
+## Go to localhost:3000 
+
