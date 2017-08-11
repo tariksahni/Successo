@@ -1,5 +1,5 @@
 
-> A digital Kanban board made with React
+> A digital Kanban board made with React and NodeJs .
 
 ## Introduction
 A Kanban board using:
