@@ -1,7 +1,7 @@
 'use strict';
 import React from 'react';
 import style from ".././css/styles.css";
-
+import axios from 'axios';
 class NewTaskForm extends React.Component {
   constructor() {
     super();
@@ -18,31 +18,32 @@ class NewTaskForm extends React.Component {
   }
 
   postTask() {
+
     var that = this;
     const author = document.getElementById('authorInput').value;
     const name = document.getElementById('titleInput').value;
     const assigned = document.getElementById('assignedInput').value;
     const description = document.getElementById('descriptionInput').value;
     let priority = document.getElementById('priorityInput').value;
-    const req = new XMLHttpRequest();
     if(priority === "Priority") {
       priority = "Low"
     }
-    req.addEventListener('load', function(){
-      if(this.responseText){
-        that.props.handler()
-      }
+
+    axios.post('/tasks', {
+      name : name,
+      author:author,
+      description:description,
+      assigned:assigned,
+      priority:priority
+    })
+    .then(response => {
+      console.log(response);
+      that.props.handler();
+    })
+    .catch(error => {
+      console.log(error);
     });
-    req.open('POST', `/tasks`);
-    req.setRequestHeader("Content-Type", "application/json")
-    req.send(JSON.stringify({
-      "name": `${name}`,
-      "author": `${author}`,
-      "description": `${description}`,
-      "assigned": `${assigned}`,
-      "priority": `${priority}`,
-    }));
-    this.setState({showNewTaskForm: !this.state.showNewTaskForm})
+    that.setState({showNewTaskForm: !that.state.showNewTaskForm})
   }
 
   render() {

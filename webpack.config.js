@@ -57,13 +57,19 @@ module.exports = {
       query: {
         presets: ['react', 'es2015'],
       },
-    }, {
+    },
+    {
       test: /\.json?$/,
       loader: 'json',
     }, {
       test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
       loader: 'file',
-    }, {
+    },
+    //   test: /\.js$/,
+    //   exclude: /node_modules/,
+    //   loader: [ 'eslint-loader']
+    // },
+     {
       test: /\.(mp4|webm)$/,
       loader: 'url?limit=10000'
     }, {

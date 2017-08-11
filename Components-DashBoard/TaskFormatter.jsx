@@ -1,6 +1,6 @@
 import React from 'react';
 import style from ".././css/styles.css";
-
+import axios from 'axios';
 class TaskFormatter extends React.Component {
   constructor() {
     super();
@@ -12,72 +12,70 @@ class TaskFormatter extends React.Component {
 
   doingStatus () {
     var that = this;
-    const req = new XMLHttpRequest();
-    req.addEventListener('load', function(){
-      if(this.responseText){
-        that.props.handler()
-      }
+    axios.put(`/tasks/${this.props.uniqueID}`, {
+      name : `${this.props.name}`,
+      author:`${this.props.author}`,
+      description:`${this.props.description}`,
+      assigned:`${this.props.assigned}`,
+      priority:`${this.props.priority}`,
+      status: 'doing'
+    })
+    .then(response => {
+      console.log(response);
+      that.props.handler();
+    })
+    .catch(error => {
+      console.log(error);
     });
-    req.open('PUT', `/tasks/${this.props.uniqueID}`);
-    req.setRequestHeader("Content-Type", "application/json")
-    req.send(JSON.stringify({
-      "name": `${this.props.name}`,
-      "author": `${this.props.author}`,
-      "description": `${this.props.description}`,
-      "assigned": `${this.props.assigned}`,
-      "priority": `${this.props.priority}`,
-      "status": "doing"
-    }));
+
   }
   doneStatus () {
     var that = this;
-    const req = new XMLHttpRequest();
-    req.addEventListener('load', function(){
-      if(this.responseText){
-        that.props.handler()
-      }
+      axios.put(`/tasks/${this.props.uniqueID}`, {
+      name : `${this.props.name}`,
+      author:`${this.props.author}`,
+      description:`${this.props.description}`,
+      assigned:`${this.props.assigned}`,
+      priority:`${this.props.priority}`,
+      status: 'done'
+    })
+    .then(response => {
+      console.log(response);
+      that.props.handler();
+    })
+    .catch(error => {
+      console.log(error);
     });
-    req.open('PUT', `/tasks/${this.props.uniqueID}`);
-    req.setRequestHeader("Content-Type", "application/json")
-    req.send(JSON.stringify({
-      "name": `${this.props.name}`,
-      "author": `${this.props.author}`,
-      "description": `${this.props.description}`,
-      "assigned": `${this.props.assigned}`,
-      "priority": `${this.props.priority}`,
-      "status": "done"
-    }));
   }
   toDoStatus () {
     var that = this;
-    const req = new XMLHttpRequest();
-    req.addEventListener('load', function(){
-      if(this.responseText){
-        that.props.handler()
-      }
+    axios.put(`/tasks/${this.props.uniqueID}`, {
+      name : `${this.props.name}`,
+      author:`${this.props.author}`,
+      description:`${this.props.description}`,
+      assigned:`${this.props.assigned}`,
+      priority:`${this.props.priority}`,
+      status: 'to-do'
+    })
+    .then(response => {
+      console.log(response);
+      that.props.handler();
+    })
+    .catch(error => {
+      console.log(error);
     });
-    req.open('PUT', `/tasks/${this.props.uniqueID}`);
-    req.setRequestHeader("Content-Type", "application/json")
-    req.send(JSON.stringify({
-      "name": `${this.props.name}`,
-      "author": `${this.props.author}`,
-      "description": `${this.props.description}`,
-      "assigned": `${this.props.assigned}`,
-      "priority": `${this.props.priority}`,
-      "status": "to-do"
-    }));
   }
 
   deleteTask () {
     var that = this;
-    const req = new XMLHttpRequest();
-    req.addEventListener('load', function(){
-      if(this.responseText){
-        that.props.handler()
-      }
+    axios.delete(`/tasks/${this.props.uniqueID}`)
+    .then(response => {
+      console.log(response);
+      that.props.handler();
+    })
+    .catch(error => {
+      console.log(error);
     });
-    req.open('DELETE', `/tasks/${this.props.uniqueID}`);
-    req.send();
   }
 
   render() {
