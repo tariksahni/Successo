@@ -2,6 +2,7 @@
 import React from 'react';
 import style from ".././css/styles.css";
 import axios from 'axios';
+
 class NewTaskForm extends React.Component {
   constructor() {
     super();
@@ -12,13 +13,11 @@ class NewTaskForm extends React.Component {
     }
   }
 
-
   onClick(){
     this.setState({showNewTaskForm: !this.state.showNewTaskForm})
   }
 
   postTask() {
-
     var that = this;
     const author = document.getElementById('authorInput').value;
     const name = document.getElementById('titleInput').value;
@@ -28,7 +27,6 @@ class NewTaskForm extends React.Component {
     if(priority === "Priority") {
       priority = "Low"
     }
-
     axios.post('/tasks', {
       name : name,
       author:author,
@@ -50,25 +48,27 @@ class NewTaskForm extends React.Component {
     return (
       <div id="newTaskFooter">
         <div className="taskDiv">
-          <h2 id="newTaskHeader" onClick={this.onClick}>  ADD NEW TASK </h2>
+          <h2 id="newTaskHeader" onClick={this.onClick}>
+            ADD NEW TASK 
+          </h2>
         </div>
-      {
-        this.state.showNewTaskForm
-          ? <div>
-              <select className="assignButton" id='priorityInput' name='priority'>
-                <option>Priority</option>
-                <option value="Low">Low</option>
-                <option value="Medium">Medium</option>
-                <option value="High">High</option>
-              </select>
-              <input type='text' id='titleInput'name='title' placeholder="Task Title"/>
-              <input type='text' id='authorInput'name='author' placeholder="Author"/>
-              <input type='text' id='assignedInput'name='assigned' placeholder="Assign To" />
-              <input type='text' id='descriptionInput' name='description' placeholder='Task Description' />
-
-              <div className="assignButton" id="newTaskButton" onClick={this.postTask}>SUBMIT</div>
+        { this.state.showNewTaskForm ? 
+          <div>
+            <select className="assignButton" id='priorityInput' name='priority'>
+              <option>Priority</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+            <input type='text' id='titleInput'name='title' placeholder="Task Title"/>
+            <input type='text' id='authorInput'name='author' placeholder="Author"/>
+            <input type='text' id='assignedInput'name='assigned' placeholder="Assign To" />
+            <input type='text' id='descriptionInput' name='description' placeholder='Task Description' />
+            <div className="assignButton" id="newTaskButton" onClick={this.postTask}>
+              SUBMIT
             </div>
-              : null
+          </div>
+        : null
       }
       </div>
     )

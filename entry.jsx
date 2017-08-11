@@ -11,14 +11,6 @@ import {Provider} from 'react-redux';
 const reducer = combineReducers(reducers);
 const store = createStore(reducer);
 
-// ReactDOM.render(
-//   <Provider store={store} >
-//     <Successo/>
-//   </Provider>,
-//   document.getElementById('root')
-// );  
-
-
 ReactDOM.render(
   <Provider store={store} >
     <BrowserRouter >

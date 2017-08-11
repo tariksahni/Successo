@@ -6,47 +6,45 @@ import DoneBox from './Components-DashBoard/DoneBox.jsx';
 import NewTaskForm from './Components-DashBoard/NewTaskForm.jsx';
 import {connect} from 'react-redux';
 import Immutable from 'immutable';
-import style from "./css/styles.css";
+import style from './css/styles.css';
+import axios from 'axios';
 
 class Successo extends React.Component {
   constructor() {
     super();
     this.onMongoData = this.onMongoData.bind(this);
     this.updateHandler = this.updateHandler.bind(this);
-  
   }
 
   onMongoData(data){
     var formattedData = JSON.parse(data.currentTarget.response);
     const parsedMongoData = JSON.parse(data.currentTarget.response);
-
     const toDoData = parsedMongoData.filter(function(el, index){
       return parsedMongoData[index].status === "to-do"
     });
-
     const doingData = parsedMongoData.filter((el, index) => {
       return parsedMongoData[index].status === "doing"
     });
-
     const doneData = parsedMongoData.filter((el, index) => {
       return parsedMongoData[index].status === "done"
     });
-
     const sendingObj = {
       toDo: toDoData,
       doing: doingData,
       done: doneData,
     }
-
     this.props.setItems(sendingObj);
   }
 
   loadDataFromMongo(){
-
-    const req = new XMLHttpRequest();
-    req.addEventListener('load', this.onMongoData);
-    req.open('GET', '/tasks');
-    req.send();
+    axios.get('/tasks', {})
+    .then(function (response) {
+      console.log(response);
+      this.onMongoData();
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   updateHandler() {
@@ -73,7 +71,6 @@ class Successo extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   var stateData = state.successo_reducer.toJS();
-
   return {
     toDo: stateData.toDo,
     doing: stateData.doing,
@@ -82,7 +79,6 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
- 
   return {
     setItems: (data) => {
       console.log("dispatch walla chala",data);
@@ -93,7 +89,6 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
-
 
 export default connect(
   mapStateToProps,

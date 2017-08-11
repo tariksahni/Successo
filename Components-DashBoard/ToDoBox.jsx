@@ -9,10 +9,8 @@ class ToDoBox extends React.Component {
   render() {
     var that = this;
     var taskListNode = this.props.data.map(function(taskDataItem, index){
-
       return (
         <TaskFormatter 
-        
         name={taskDataItem.name}
         author={taskDataItem.author} key={taskDataItem._id}
         uniqueID={taskDataItem._id}
@@ -25,12 +23,12 @@ class ToDoBox extends React.Component {
         />
       )
     });
-    return (
-      <div id="colOne">
-        <div><span className="colHeader">To Do Tasks</span>
+  return (
+    <div id="colOne">
+      <div><span className="colHeader">To Do Tasks</span>
         { taskListNode }
-        </div>
       </div>
+    </div>
     );
   };
 };

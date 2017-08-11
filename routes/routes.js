@@ -10,7 +10,6 @@ Router.post('/signup', (req, res) => {
   user.name = req.body.name;
   user.password = req.body.password;
   user.email = req.body.email;
-
   user.save( err => {
     if(err)
       res.send(err);
@@ -20,12 +19,10 @@ Router.post('/signup', (req, res) => {
 
 
 Router.post('/signin', (req, res) => {
-  
   db1.findOne({ email: req.body.email , password: req.body.password }, function(err, user) { 
-
-      if(err) return next(err);
-      if(!user) return res.send('Not logged in!');
-      return res.send('Logged In!');
+    if(err) return next(err);
+    if(!user) return res.send('Not logged in!');
+    return res.send('Logged In!');
    });
 });
 
@@ -37,7 +34,6 @@ Router.post('/', (req, res) => {
   task.description = req.body.description;
   task.priority = req.body.priority;
   task.assigned = req.body.assigned;
-
   task.save( err => {
     if(err)
       res.send(err);
@@ -61,7 +57,6 @@ Router.put('/:id', (req, res) => {
     task.status = req.body.status;
     task.priority = req.body.priority;
     task.assigned = req.body.assigned;
-
     task.save(function(err){
       if (err) {
         return res.send(err);

@@ -6,10 +6,9 @@ import style from ".././css/styles.css";
 class DoneBox extends React.Component {
   render() {
     var that = this;
-      var taskListNode = this.props.data.map(function(taskDataItem, index){
+    var taskListNode = this.props.data.map(function(taskDataItem, index){
       return (
         <TaskFormatter 
-        
         uniqueID={taskDataItem._id}
         name={taskDataItem.name} author={taskDataItem.author}
         description={taskDataItem.description}
@@ -22,8 +21,11 @@ class DoneBox extends React.Component {
     });
     return (
       <div id="colThree">
-        <div><span className="colHeader">Done Tasks</span>
-        {taskListNode}
+        <div>
+          <span className="colHeader">
+            Done Tasks
+          </span>
+          {taskListNode}
         </div>
       </div>
     );

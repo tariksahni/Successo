@@ -29,6 +29,7 @@ class TaskFormatter extends React.Component {
     });
 
   }
+  
   doneStatus () {
     var that = this;
       axios.put(`/tasks/${this.props.uniqueID}`, {
@@ -47,6 +48,7 @@ class TaskFormatter extends React.Component {
       console.log(error);
     });
   }
+
   toDoStatus () {
     var that = this;
     axios.put(`/tasks/${this.props.uniqueID}`, {
@@ -83,7 +85,7 @@ class TaskFormatter extends React.Component {
       <div className='taskItem'>
         <div className="taskItemName">
           <div className="taskItemNameText">
-            {this.props.name}<br />
+            {this.props.name} <br />
             <span className="createdByLabel">Created By:</span> <span className="createdByName">{this.props.author}</span>
           </div>
         </div>
