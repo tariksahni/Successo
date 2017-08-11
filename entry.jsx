@@ -30,9 +30,9 @@ ReactDOM.render(
   <Provider store={store} >
     <BrowserRouter >
         <Switch>
-          <Route component={SignIn} exact path="/abc"></Route>
+          <Route component={SignIn} exact path="/"></Route>
           <Route component={SignUp} path="/signup"></Route>
-          <Route component={Successo} path="/"></Route>
+          <Route component={Successo} path="/dashboard"></Route>
         </Switch>
     </BrowserRouter>
   </Provider>  ,
