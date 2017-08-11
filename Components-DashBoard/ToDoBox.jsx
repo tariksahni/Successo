@@ -1,5 +1,5 @@
 import React from 'react';
-import TaskFormatter from './TaskFormatter.jsx';
+import Task from './Task.jsx';
 import style from ".././css/styles.css";
 
 class ToDoBox extends React.Component {
@@ -10,7 +10,7 @@ class ToDoBox extends React.Component {
     var that = this;
     var taskListNode = this.props.data.map(function(taskDataItem, index){
       return (
-        <TaskFormatter 
+        <Task
         name={taskDataItem.name}
         author={taskDataItem.author} key={taskDataItem._id}
         uniqueID={taskDataItem._id}
@@ -18,7 +18,6 @@ class ToDoBox extends React.Component {
         assigned={taskDataItem.assigned}
         priority={taskDataItem.priority}
         status={taskDataItem.status}
-        /*key={taskDataItem._id}*/
         handler={that.props.handler}
         />
       )

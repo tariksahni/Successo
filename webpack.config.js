@@ -9,12 +9,11 @@ var StatsPlugin = require('stats-webpack-plugin');
 
 module.exports = {
   devtool: 'eval-source-map',
-  entry: [
-    'webpack-hot-middleware/client?reload=true',
-    path.join(__dirname, '/entry.jsx'),
-  ],
+  entry: {
+    'bundle':'./entry.jsx'
+  },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname),
     filename: '[name].js',
     publicPath: '/',
   },

@@ -9,7 +9,6 @@ let initialState = Map({
 });
 
 const successoReducer = (state = initialState, action) => {
-  console.log("reducer mei aa gya abb",state,action);
   let newState = state;
   switch(action.type){
     

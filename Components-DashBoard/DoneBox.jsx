@@ -1,6 +1,6 @@
 'use strict';
 import React from 'react';
-import TaskFormatter from './TaskFormatter.jsx';
+import Task from './Task.jsx';
 import style from ".././css/styles.css";
 
 class DoneBox extends React.Component {
@@ -8,7 +8,7 @@ class DoneBox extends React.Component {
     var that = this;
     var taskListNode = this.props.data.map(function(taskDataItem, index){
       return (
-        <TaskFormatter 
+        <Task
         uniqueID={taskDataItem._id}
         name={taskDataItem.name} author={taskDataItem.author}
         description={taskDataItem.description}
