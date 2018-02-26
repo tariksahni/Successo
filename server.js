@@ -1,5 +1,5 @@
 'use strict';
-
+/* eslint-disable */
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -18,7 +18,7 @@ const routes = require('./routes/routes');
 const bodyParser = require('body-parser');
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('we are connected!');
+  console.log('we are connected!'); 
 });
 
 const port = 3000 || process.env.PORT;

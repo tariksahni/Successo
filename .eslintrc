@@ -4,14 +4,15 @@
       "jsx": true
       }
     },
-  "env": {                           // http://eslint.org/docs/user-guide/configuring.html#specifying-environments
-    "browser": true,                 // browser global variables
-    "node": true                     // Node.js global variables and Node.js-specific rules
+  "env": {                          
+    "browser": true,    
+    "node": true                  
     },
-  "parser": "babel-eslint",          // https://github.com/babel/babel-eslint
+  "parser": "babel-eslint",         
   "plugins": [
-    "react"                          // https://github.com/yannickcr/eslint-plugin-react
+    "react"                          
     ], "rules": {
+      "react/prop-types": 0
        
     },
     "extends": ["eslint:recommended", "plugin:react/recommended"]

@@ -1,5 +1,5 @@
 import React from 'react';
-import style from ".././css/styles.css";
+import style from ".././css/styles.css"; //eslint-disable-line
 import axios from 'axios';
 class Task extends React.Component {
   constructor() {
@@ -20,12 +20,12 @@ class Task extends React.Component {
       priority:`${this.props.priority}`,
       status: 'doing'
     })
-    .then(response => {
-      console.log(response);
+    .then(response => { //eslint-disable-line
+
       that.props.handler();
     })
-    .catch(error => {
-      console.log(error);
+    .catch(error => { //eslint-disable-line
+
     });
 
   }
@@ -40,12 +40,12 @@ class Task extends React.Component {
       priority:`${this.props.priority}`,
       status: 'done'
     })
-    .then(response => {
-      console.log(response);
+    .then(response => { //eslint-disable-line
+
       that.props.handler();
     })
-    .catch(error => {
-      console.log(error);
+    .catch(error => { //eslint-disable-line
+
     });
   }
 
@@ -59,24 +59,24 @@ class Task extends React.Component {
       priority:`${this.props.priority}`,
       status: 'to-do'
     })
-    .then(response => {
-      console.log(response);
+    .then(response => { //eslint-disable-line
+
       that.props.handler();
     })
-    .catch(error => {
-      console.log(error);
+    .catch(error => { //eslint-disable-line
+
     });
   }
 
   deleteTask () {
     var that = this;
     axios.delete(`/tasks/${this.props.uniqueID}`)
-    .then(response => {
-      console.log(response);
+    .then(response => { //eslint-disable-line
+
       that.props.handler();
     })
-    .catch(error => {
-      console.log(error);
+    .catch(error => { //eslint-disable-line
+
     });
   }
 
@@ -102,7 +102,7 @@ class Task extends React.Component {
         </div>
       </div>
     );
-  };
-};
+  }
+}
 
 export default Task;

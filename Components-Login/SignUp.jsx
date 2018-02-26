@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
-import SignIn from './SignIn.jsx';
+import { Link} from 'react-router-dom';
 import axios from 'axios';
-import style from ".././css/styles.css";
+import style from ".././css/styles.css"; //eslint-disable-line
 
 class SignUp extends Component{
 
@@ -25,12 +24,12 @@ class SignUp extends Component{
       password: this.state.password,
       name: this.state.name
     })
-    .then(function (response) {
-      console.log(response);
+    .then(function (response) { //eslint-disable-line
+
       window.location.href = '/';
     })
-    .catch(function (error) {
-      console.log(error);
+    .catch(function (error) { //eslint-disable-line
+
     });
   }
 
@@ -52,15 +51,15 @@ class SignUp extends Component{
         <form className="form-signup">
           <h2 className="form-signup-heading">Please sign up</h2>
           <div className ="signup_div">
-            <label for="inputName" className="sr-only-signup">  Name   </label>&nbsp;&nbsp;
+            <label htmlFor="inputName" className="sr-only-signup">  Name   </label>&nbsp;&nbsp;
             <input type="name" onChange={this.handleNameChange} id="inputName" className="form-control-signup"  required />
           </div>
           <div className ="signup_div">
-            <label for="inputEmail" className="sr-only-signup">  Email   </label>&nbsp;&nbsp;
+            <label htmlFor="inputEmail" className="sr-only-signup">  Email   </label>&nbsp;&nbsp;
             <input type="email" onChange={this.handleEmailChange} id="inputEmail" className="form-control-signup"  required />
           </div>
           <div className ="signup_div_pass">
-            <label for="inputPassword" className="sr-only-signup">Password</label>&nbsp;&nbsp;
+            <label htmlFor="inputPassword" className="sr-only-signup">Password</label>&nbsp;&nbsp;
             <input type="password" onChange={this.handlePasswordChange} id="inputPassword_signup" className="form-control-signup" required />
           </div>
           <button className="btn btn-lg btn-primary btn-block button_signup" onClick={this.signUp} type="button">Sign up</button>

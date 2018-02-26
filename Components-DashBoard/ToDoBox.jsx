@@ -1,6 +1,6 @@
 import React from 'react';
 import Task from './Task.jsx';
-import style from ".././css/styles.css";
+import style from ".././css/styles.css"; //eslint-disable-line
 
 class ToDoBox extends React.Component {
   postTask () {
@@ -8,7 +8,7 @@ class ToDoBox extends React.Component {
   }
   render() {
     var that = this;
-    var taskListNode = this.props.data.map(function(taskDataItem, index){
+    var taskListNode = this.props.data.map(taskDataItem => {
       return (
         <Task
         name={taskDataItem.name}
@@ -29,7 +29,7 @@ class ToDoBox extends React.Component {
       </div>
     </div>
     );
-  };
-};
+  }
+}
 
 export default ToDoBox;
