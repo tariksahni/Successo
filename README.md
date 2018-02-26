@@ -9,10 +9,12 @@ A Kanban board using:
 - **Mongoose** as your ORM for the **Mongo** Datastore.
 
 ## To Run 
-- // Go to the directory 
+- Go to the directory  
 - cd Successo
+- npm install
 - npm start
 
+- open mongo conosole in another terminal
 
 ## Go to localhost:3000 
 
